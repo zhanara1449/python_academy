@@ -24,7 +24,7 @@ const save=()=>{localStorage.setItem('pa2-completed',JSON.stringify([...complete
 const norm=s=>String(s).trim().toLowerCase().replace(/[“”"`]/g,"'").replace(/\s+/g,'').replace(/;$/,'');
 function make(tag,content,cls){const e=document.createElement(tag);if(content!==undefined)e.textContent=content;if(cls)e.className=cls;return e;}
 function button(text,fn,cls){const b=make('button',text,cls);b.type='button';b.onclick=fn;return b;}
-function stat(){ score=Number(saved('pa2-score',score))||0;const extra=saved('pa2-practice-checks',[]); $('practiceSolvedCount').textContent=extra.length; $('practicePoints').textContent=extra.length*2; $('completedCount').textContent=completed.size;$('score').textContent=score; $('solvedCount').textContent=checks.size; $('earnedLessonPoints').textContent=completed.size*10; }
+function stat(){ score=Number(saved('pa2-score',score))||0;const extra=saved('pa2-practice-checks',[]); $('practiceSolvedCount').textContent=extra.length; $('practicePoints').textContent=extra.length*2; $('completedCount').textContent=completed.size;$('score').textContent=score; $('solvedCount').textContent=checks.size; $('earnedLessonPoints').textContent=checks.size*2; }
 function updateLessonResult(newlyCompleted=false){
  const correct=item().tasks.filter((t,i)=>t.type!=='reflection'&&checks.has(`${key()}-${i}`)).length;
  const earned=Math.min(10,correct*2);
