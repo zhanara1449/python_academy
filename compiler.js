@@ -17,3 +17,4 @@ $('runPython').onclick=run;$('stopPython').onclick=()=>{kill();status(t().stoppe
 $('askAssistant').onclick=()=>{const q=$('assistantQuestion').value.trim();if(!q){chat(t().prompt);return}chat(q,true);chat(answer(q));$('assistantQuestion').value=''};$('hintAssistant').onclick=()=>chat(t().hintText+'\n'+answer($('lessonTitle').textContent));
 const observer=new MutationObserver(sync);observer.observe($('lessonTag'),{childList:true,characterData:true,subtree:true});document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setTimeout(sync,0)));sync();chat(t().greeting);
 })();
+// Проверка обновления сайта

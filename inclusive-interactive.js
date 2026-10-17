@@ -49,3 +49,4 @@ function card(title,desc,n){const c=el('article','extra-card inclusive-activity'
 }
 document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setTimeout(render,1)));render();
 })();
+// Проверка обновления сайта
